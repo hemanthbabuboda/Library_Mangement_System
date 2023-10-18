@@ -34,13 +34,7 @@ button:hover{
     border: 1px solid transparent;
     transition: .4s;
 }
- *{
-    margin:0;
-    padding:0;
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    box-sizing:border-box
-}
+
 
 
 /* input{
@@ -99,3 +93,11 @@ a:active,a:focus,a:hover{
     color: aqua
 }
 
+*{
+    margin:0;
+    padding:0;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box
+    
+}

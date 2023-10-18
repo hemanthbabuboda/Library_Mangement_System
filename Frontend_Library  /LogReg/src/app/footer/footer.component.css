@@ -5,7 +5,7 @@ footer ul li a{
 footer{
     background:#232324;
     z-index:1;
-    position:relative;
+    position:sticky;
     text-align:center
 }
 footer li a{
@@ -15,6 +15,10 @@ footer li a{
 footer ul li{
     display:inline-block;
     font-size:14px;
-    padding:20px 20px
+    padding:20px 20px;
+    margin-bottom: 0;
 }
 
+*{
+    margin-bottom: 0;
+}
