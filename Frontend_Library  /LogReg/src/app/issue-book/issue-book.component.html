@@ -1,0 +1,69 @@
+<!-- 
+<app-au-nav></app-au-nav> -->
+
+<body>
+    <div class="page-wrapper">
+      
+        <div class="tiledBackground">
+        <br><br><br><br><br><br><br><br>
+        <div class="title">
+           Issue a book
+        </div>
+        <hr>
+
+        <!-- <table class="table">
+            <thead>
+                <tr>
+                    <th>Book Id</th>
+                    <th>Book Name</th>
+                    <th>Author</th>
+                    <th>Category</th>
+                    <th> Available Quantity</th>
+                    <th>Book Pic</th>
+                    <th>    </th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor= "let book of books "> 
+                    <td>{{book.bookId}}</td>
+                    <td>{{book.bookName}}</td>
+                    <td>{{book.author}}</td>
+                    <td>{{book.category}}</td>
+                    <td>{{book.quantity}}</td>
+                    <td><img [src]="book.bookPic" width="150px" ></td>
+
+                    <td>
+                        <td><button (click)="issue(book)">issueBook</button></td>
+                </tr>
+            </tbody>
+        
+
+        </table> -->
+
+
+        <div clsss="main-content">
+            <div class="section-content section-content-p30">
+                <div class="container-fluid">
+                    <div class="row">
+
+                        <div *ngFor="let book of books" class="col-md-3">
+                            <div class="book-box">
+                                <img [src]="book.bookPic" width="150px" class="img-responsive"><br>
+                               <h1>Book Id : <span>{{book.bookId}}</span></h1> 
+                               <h1>Book Name : <span>{{book.bookName}}</span></h1> 
+                                
+                               <h1>Author : <span>{{book.author}}</span></h1>
+                                <h1>Category : <span>{{book.category}}</span></h1>
+                                 <h1>Quantity : <span class="quantity">{{book.quantity}}</span></h1>
+                                 <br><button (click)="issue(book)">issueBook</button>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
+</body>

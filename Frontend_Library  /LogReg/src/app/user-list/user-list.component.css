@@ -1,0 +1,72 @@
+
+.tiledBackground {
+    background-image: url(../../assets/book104.jpg);
+    background-size:100%;
+    width: 100%;
+    height: 900px;
+    background-repeat: no-repeat;
+    background-position:center;
+    margin: -150px 0px 0px 0px;
+  }
+.title{
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: aqua;
+    /* margin-top: 150px;
+    padding-top: 30px; */
+  }
+  
+table{
+    color: white;
+    border: 1px solid black;
+    background-color: transparent; 
+    vertical-align: middle;
+    margin-top: 50px;
+    text-align: center;
+}
+
+thead{
+    color: aqua;
+    text-decoration: solid;
+}
+tbody tr:hover {
+    background:rgba(152, 235, 189, 0.319);
+}
+button{
+    display: inline-block;
+    background: transparent;
+    padding: 5px 10px;
+    border-radius: 10px;
+    line-height: 1.3;
+    color: red;
+    font-weight: 400;
+}
+button:hover{
+    background-color: red;
+    color: black;
+    border: 1px solid transparent;
+    transition: .4s;
+}
+
+#search{
+    background-color: transparent;
+    color: white;
+    border-color: white;
+    text-align: left;
+    border-radius: 8px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    width: 12%;
+    margin-left: 3.5em;
+}
+.date{
+    background-color: transparent;
+    text-align: center;
+    border-color: transparent;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    padding-left: 20px;
+    margin-bottom: 5px;
+  }

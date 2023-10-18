@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="return-book.component.css">
+
+    <div class="tiledBackground">
+        <br><br><br><br><br><br><br><br>
+
+    <div class="title">
+        User Books
+    </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    
+                    <th>Book Id</th>
+                    <th>Book Name</th>
+                    <th>Book Pic</th>
+                    <th>Issue Date</th>
+                    <th>Due Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor= "let issue of issuebooks" >
+                    <td>{{issue.bookId}}</td>
+                    <td>{{issue.bookName}}</td>
+                    <td><img [src]="issue.bookPic" width="150px" ></td>
+                    <td>{{issue.issueDate}}</td>
+                    <td>{{issue.dueDate}}</td>
+                   
+                    <td>
+                        <button class="btn btn-danger" (click)="return(issue)">Return</button>
+                    </td> 
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+

@@ -1,0 +1,176 @@
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.Mockito.when;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+import com.example.LogReg.dao.UsersDao;
+import com.example.LogReg.exceptions.EmailIdAlreadyExistException;
+import com.example.LogReg.exceptions.PasswordMissmatchException;
+import com.example.LogReg.exceptions.UserIdAlreadyExistException;
+import com.example.LogReg.model.ChangePassword;
+import com.example.LogReg.model.Users;
+import com.example.LogReg.serviceImpl.UserServiceImpl;
+
+
+@ExtendWith(MockitoExtension.class)
+public class UserServiceImplTest {
+
+		
+//		@InjectMocks
+//		UserService userService;
+	//	
+//		@Mock
+//		UsersDao userDao;
+	//	
+//		List<Users> userList=new ArrayList<>();
+	//	
+//		@BeforeEach
+//		void setup() {
+//			userList.add(new Users(61,"ramesh@gmail.com","ramesh","Ramesh@123",9789123456L));
+//			userList.add(new Users(54,"ravi2@gmail.com","ravi","Ravi@123",6789123456L));
+//			userList.add(new Users(62,"ramu@gmail.com","ramu","Ramu@123",7789123456L));		
+//		}
+	//	
+//		@Test
+//		void addTest() throws EmailIdAlreadyExistException, UserIdAlreadyExistException {
+//			
+//			Users user= new Users(54,"ravi2@gmail.com","ravi","Ravi@123",6789123456L);
+	//
+//			when(userDao.save(user)).thenReturn(user);	
+//			
+//			assertEquals(user, userService.add(user));
+//		}
+	//	
+//		@Test
+//		void   loginTest() {
+//			Users user= new Users(54,"ravi2@gmail.com","ravi","Ravi@123",6789123456L);
+//			
+//			for(Users users:userList) {
+//				if(user.getEmail()==users.getEmail()) {
+//					if(user.getPassword()==users.getPassword()) {
+//						when(userDao.findByEmailAndPassword(user.getEmail(),user.getPassword())).thenReturn(users);
+//						assertEquals(users, userService.login(user.getEmail(),user.getPassword()));
+//					}
+//				}
+//			}
+//		}
+	//	
+//		@Test
+//		void upadePassword() throws PasswordMissmatchException{
+//			
+//			Users user= new Users(54,"ravi2@gmail.com","ravi","123",6789123456L);
+//			Users oldUser= new Users(54,"ravi2@gmail.com","ravi","Ravi@123",6789123456L);
+//			Optional<Users> optionaluser = Optional.of(oldUser);
+//			ChangePassword changePassword=new ChangePassword("Ravi@123","123");
+//			
+//			when(userDao.findByUserId(anyInt())).thenReturn(optionaluser);
+//			when(userDao.save(any(Users.class))).thenReturn(user);
+	//
+//			assertInstanceOf(Users.class, userService.updatePassword(changePassword, oldUser.getUserId()));
+	//
+//		}
+	//	
+	//}
+		
+		
+		
+		@InjectMocks 
+		UserServiceImpl userService;
+		
+		@Mock
+		UsersDao userDao;
+		
+		List<Users> userList=new ArrayList<>();
+		
+		@BeforeEach
+		void setup() {
+			userList.add(new Users(61,"ramesh@gmail.com","ramesh","Ramesh@123",9789123456L));
+			userList.add(new Users(54,"ravi2@gmail.com","ravi","Ravi@123",6789123456L));
+			userList.add(new Users(62,"ramu@gmail.com","ramu","Ramu@123",7789123456L));		
+		}
+		
+		@Test
+		void addTest() throws EmailIdAlreadyExistException, UserIdAlreadyExistException {
+			
+			Users user= new Users(51,"arjun@gmail.com","arjun","arjun@123",9876543210L);
+
+		   when(userDao.save(user)).thenReturn(user);	
+			
+			assertEquals(user, userService.add(user));
+		}
+		
+		@Test
+		void   loginTest() {
+			Users user= new Users(54,"ravi2@gmail.com","ravi","Ravi@123",6789123456L);
+			
+			for(Users users:userList) {
+				if(user.getEmail()==users.getEmail()) {
+					if(user.getPassword()==users.getPassword()) {
+						Mockito.when(userDao.findByEmailAndPassword(user.getEmail(),user.getPassword())).thenReturn(users);
+						assertEquals(users, userService.login(user.getEmail(),user.getPassword()));
+					}
+				}
+			}
+		}
+		
+		@Test
+		void upadePassword() throws PasswordMissmatchException{
+			
+			Users user= new Users(54,"ravi2@gmail.com","ravi","123",6789123456L);
+			Users oldUser= new Users(54,"ravi2@gmail.com","ravi","Ravi@123",6789123456L);
+			Optional<Users> optionaluser = Optional.of(oldUser);
+			ChangePassword changePassword=new ChangePassword("Ravi@123","123");
+			
+			when(userDao.findByUserId(anyInt())).thenReturn(optionaluser);
+			when(userDao.save(any(Users.class))).thenReturn(user);
+
+			assertInstanceOf(Users.class, userService.updatePassword(changePassword, oldUser.getUserId()));
+
+		}
+
+			@Test
+			void   testGetusersByEmail() {
+				
+			
+				Users user1=new Users(54,"ravi2@gmail.com","ravi","Ravi@123",6789123456L);
+				when(userDao.findById(user1.getEmail())).thenReturn(Optional.of(user1));
+				assertEquals(user1,userService.getusersByEmail("ravi2@gmail.com"));
+			}
+			
+			@Test
+			void testGetAllUsers() {
+				when(userDao.findAll()).thenReturn(userList);
+				assertEquals(userList, userService.getAllUsers());
+			}
+			@Test
+			void testGetByUserId() {
+				Users user=new Users(54,"ravi2@gmail.com","ravi","Ravi@123",6789123456L);
+				when(userDao.findByUserId(user.getUserId())).thenReturn(Optional.of(user));
+				assertEquals(user,userService.getByUserId(54));
+			}
+			@Test
+			void testDeleteUser() {
+				Users user=new Users(54,"ravi2@gmail.com","ravi","Ravi@123",6789123456L);
+				userDao.deleteById(user.getEmail());
+				assertEquals(false, userService.deleteUser(user.getUserId()));
+				assertThat(userDao.count()).isEqualTo(0);
+			
+				
+			}
+	}
+

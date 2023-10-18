@@ -1,0 +1,5 @@
+package com.project.wishlist.service;
+
+public class WishlistServiceImp {
+
+}

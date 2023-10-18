@@ -1,0 +1,40 @@
+<!-- <app-au-nav></app-au-nav> -->
+
+    <div class="tiledBackground">
+        <br><br><br><br><br><br><br><br>
+        <div class="title">
+            Registered Users
+        </div>
+        <input class="form-control" id="search" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="search here">
+        <input type="date" #date style="margin-left: 75%;" class="date"/>
+        <button (click)="searchbyIssueDate(date)">search By IssueDate</button>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>User Id</th>
+                        <th>User Name</th>
+                        <th>Email Id</th>
+                        <th>Contact Number</th>
+                        <th></th>
+                        <th>Actions</th>
+                        <th></th>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor= "let user of users | filter:searchText" >
+                        <td>{{user.userId}}</td>
+                        <td>{{user.name}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.contact}}</td>
+
+                        <td><button class="btn" (click)="onsubmit(user)" routerLink="/issuebooklist">IssueBook </button></td>
+                        <td><button class="btn" (click)="deleteUser(user.userId)">Delete</button></td>
+                        <td><button class="btn" routerLink="/returnbooklist">Return Book</button></td>
+                        
+                        
+                    </tr>
+                </tbody>
+            </table>
+    </div>

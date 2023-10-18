@@ -1,0 +1,62 @@
+<!-- <app-au-nav></app-au-nav> -->
+
+<body>
+    <div class="page-wrapper">
+    <div class="tiledBackground">
+        <br><br><br><br><br><br><br>
+
+    <div class="title">
+        Wishlist
+    </div><hr>
+        <!-- <table class="table">
+            <thead>
+                <tr>
+                    <th>Book Id</th>
+                    <th>Book Name</th>
+                    <th>Author</th>
+                    <th>Category</th>
+                    <th>Book Pic</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor= "let fav of favourites" >
+                    <td>{{fav.bookId}}</td>
+                    <td>{{fav.bookName}}</td>
+                    <td>{{fav.author}}</td>
+                    <td>{{fav.category}}</td>
+                    <td><img [src]="fav.bookPic" width="150px" ></td>
+                    <td>
+                        <button class="btn btn-danger" (click)="deleted(fav.bookId)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div> -->
+
+    <div clsss="main-content">
+        <div class="section-content section-content-p30">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div *ngFor="let fav of favourites" class="col-md-3">
+                        <div class="book-box">
+                            <img [src]="fav.bookPic" width="150px" class="img-responsive"><br>
+                           <h1>Book Id : <span>{{fav.bookId}}</span></h1> 
+                           <h1>Book Name : <span>{{fav.bookName}}</span></h1> 
+                            
+                           <h1>Author : <span>{{fav.author}}</span></h1>
+                            <h1>Category : <span>{{fav.category}}</span></h1>
+                             <button class="btn btn-danger" (click)="deleted(fav.bookId)">Delete</button>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+</div>
+<app-footer></app-footer>
+</body>
+

@@ -1,0 +1,51 @@
+
+<!-- <app-au-nav></app-au-nav> -->
+
+<body>
+    <div class="page-wrapper">
+    <app-search></app-search>
+
+    <div class="tiledBackground">
+        <br><br><br><br><br>
+        <div class="title">
+            Book List
+        </div>
+            <div class="input_category" style="margin-left: 85%;">
+                <select name="category" #category (change)="onSelected(category.value)" >
+                <option class="hi" selected>Search By Category</option>
+                <option class="hli" value="Technical Language">Technical Language</option>
+                <option value="Comic">Comic</option>
+                <option value="Environment">Environment</option>
+                <option value="Ethics">Ethics</option>
+                <option value="Science">Science</option>
+                <option value="Others">Others</option> 
+               </select>
+              </div>
+        <hr>
+    
+                <div clsss="main-content">
+                    <div class="section-content section-content-p30">
+                        <div class="container-fluid">
+                            <div class="row">
+
+                                <div *ngFor="let book of books" class="col-md-3">
+                                    <div class="book-box">
+                                        <img [src]="book.bookPic" width="150px" class="img-responsive"><br>
+                                       <h1>Book Id : <span>{{book.bookId}}</span></h1> 
+                                       <h1>Book Name : <span>{{book.bookName}}</span></h1> 
+                                        
+                                       <h1>Author : <span>{{book.author}}</span></h1>
+                                        <h1>Category : <span>{{book.category}}</span></h1>
+                                         <h1>Quantity : <span class="quantity">{{book.quantity}}</span></h1>
+                                        
+                                    </div>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+</body>
+

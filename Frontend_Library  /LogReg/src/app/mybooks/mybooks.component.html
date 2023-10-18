@@ -1,0 +1,38 @@
+
+<!-- <app-au-nav></app-au-nav> -->
+
+<link rel="stylesheet" href="mybooks.component.css">
+
+    <div class="tiledBackground">
+        <br><br><br><br><br><br><br><br>
+
+    <div class="title">
+        My Books
+    </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    
+                    <th>Book Id</th>
+                    <th>Book Name</th>
+                    <th>Book Pic</th>
+                    <th>Issue Date</th>
+                    <th>Due Date</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor= "let issue of issuebooks" >
+                    <td>{{issue.bookId}}</td>
+                    <td>{{issue.bookName}}</td>
+                    <td><img [src]="issue.bookPic" width="150px" ></td>
+                    <td>{{issue.issueDate}}</td>
+                    <td>{{issue.dueDate}}</td>
+                   
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+

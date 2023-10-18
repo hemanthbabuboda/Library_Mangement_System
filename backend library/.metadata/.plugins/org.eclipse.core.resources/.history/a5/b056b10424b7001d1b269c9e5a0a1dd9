@@ -1,0 +1,46 @@
+package com.project.wishlist.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.bookList.exception.BookAlreadyExistException;
+import com.project.wishlist.exception.BookAlreadyExistsInFavException;
+import com.project.wishlist.model.Favourites;
+import com.project.wishlist.repository.WishListRepository;
+
+public class WishlistServiceImp implements WishlistService{
+
+	@Autowired 
+	private WishListRepository wishlistRepo;
+	
+	public Favourites addToFavourites(Favourites fav) throws BookAlreadyExistsInFavException {
+		Optional<Favourites> opt=wishlistRepo.findUserByEmailIdAndBookId(fav.getEmailId(),fav.getBookId());
+
+		if(opt.get() !=null) {
+			throw new BookAlreadyExistsInFavException();
+		}
+		return wishlistRepo.save(fav);
+	}
+	
+	public List<Favourites> getFavourites(String emailId){
+		List<Favourites> fav=wishlistRepo.findFavouritesByEmailId(emailId);
+		if(fav.isEmpty())
+			return null;
+		return fav;
+	}
+	
+	public Favourites deleteFavouriteBook(String emailId,int bookId) {
+		Favourites isDeleted=null;
+		try {
+			isDeleted=wishlistRepo.deleteByEmailIdAndBookId(emailId,bookId);
+		}
+		catch(Exception e) {
+			logger.error("Error while deleting from favourites");
+		}
+		return isDeleted;
+		
+	}
+
+}

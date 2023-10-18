@@ -1,0 +1,20 @@
+package com.project.wishlist.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.project.wishlist.model.Favourites;
+
+
+@Service
+public interface WishlistService {
+	
+	public Favourites addToFavourites(Favourites fav);
+	
+	public List<Favourites> getFavourites(String emailId);
+	
+	public Favourites deleteFavouriteBook(String emailId,int bookId);
+	
+
+}

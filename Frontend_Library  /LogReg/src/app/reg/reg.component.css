@@ -1,0 +1,167 @@
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body{
+  background: aqua;
+}
+
+.wrapper{
+  max-width: 450px;
+  width: 100%;
+  height: auto;
+  background: rgba(0,0,0,0.1);
+  padding: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 25px;
+  box-shadow: 4px 4px 4px aqua;
+}
+
+.wrapper .title{
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  color: aqua;
+}
+.wrapper .social_media .item{
+  margin: 0 5px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  border: 2px solid #eeeeee;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #eeeeee;
+  transition: all 0.5s ease;
+}
+
+.wrapper .social_media .item:hover{
+  border: 2px solid aqua;
+  color: black;
+  background-color: aqua;
+}
+
+.wrapper .form .input_field{
+  position: relative;
+  margin-bottom: 10px;
+}
+.form input:hover{
+    box-shadow: 4px 4px 9px aqua;
+}
+
+.wrapper .form .input_field .input{
+  width: 100%;
+  padding: 12px;
+  padding-left: 30px;
+  border: none;
+  background: #eeeeee;
+  border-radius: 7px;
+}
+
+
+
+.wrapper .form .input_field i{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 14px;
+  color: #1d2120;
+}
+
+::-webkit-input-placeholder { 
+  color: #1d2120;
+}
+::-moz-placeholder { 
+ color: #1d2120;
+}
+:-ms-input-placeholder { 
+  color: #1d2120;
+}
+.tiledBackground {
+     background-image: url(../../assets/book103.jpeg); 
+   
+    background-size:100%;
+    width: 100%;
+    height:1130px;
+    background-repeat: no-repeat;
+  }
+.wrapper .social_media{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .logo i{
+    height: 55px; width: 55px;
+
+    background: transparent;
+
+    border: 2px solid aqua;
+    color: aqua;
+
+    border-radius: 50%; 
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.logo{
+    padding-right: 1010px;
+    padding-top: 20px;
+    padding-left: 50px;
+}
+.logo .fa:hover{
+  background-color: aqua;
+  color: black;
+  border: 2px solid transparent;
+  transition: .4s;
+}
+.lokesh{
+  text-align: center;
+}
+.wrapper .form .btn{
+  width: 40%;
+  height: 40px;
+  margin: 20px auto 0;
+  color: aqua;
+  font-size: 16px;
+  font-weight: 500;
+  background: transparent;
+  border: 2px solid aqua;
+  text-align: center;
+  border-radius: 25px;
+  
+}
+.wrapper .form .btn:hover{
+  background-color: aqua;
+  color: black;
+  transition: .4s;
+}
+.wrapper .form .btnn{
+  text-align: center;
+}
+.tc{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+
+

@@ -1,0 +1,413 @@
+<!-- 
+<section class="vh-100" style="background-color: #eee;">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black" style="border-radius: 25px;">
+            <div class="card-body p-md-5"  >
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+  
+                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+  
+                  <form [formGroup]="registrationForm" class="mx-1 mx-md-4" #regForm="ngForm" (ngSubmit)="addUser(regForm)">
+
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3Example4cd">User Id:</label>
+                        <input type="number" formControlName="userid" class="form-control" [(ngModel)]="user.userId"/>
+                        <div class="form-text text-danger" *ngIf="UserId.errors?.['required'] && (UserId.touched || UserId.dirty)" >User Id is required</div>
+                        <div class="form-text text-danger" *ngIf="UserId.errors?.['pattern'] && (UserId.touched || UserId.dirty)" >User Id should start with (1-9) and of 4 digits </div>
+
+
+                      </div>
+                    </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3Example1c">Name :</label>
+                        <input type="text" formControlName="name" class="form-control"  [(ngModel)]="user.name"/>
+                        <div class="form-text text-danger" *ngIf="UserName.errors?.['required'] && (UserName.touched || UserName.dirty)" >User Name is required</div>
+                        <div class="form-text text-danger" *ngIf="UserName.errors?.['pattern'] && (UserName.touched || UserName.dirty)" >User Name should only contain alphabets</div>
+                        <div class="form-text text-danger" *ngIf="UserName.errors?.['minlength'] && (UserName.touched || UserName.dirty)" >User Name is too short</div>
+                        <div class="form-text text-danger" *ngIf="UserName.errors?.['maxlength'] && (UserName.touched || UserName.dirty)" >User Name is too long</div>
+
+                      </div>
+                    </div>
+
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3Example3c">Email :</label>
+                        <input type="email" formControlName="email" class="form-control" [(ngModel)]="user.email" />
+                        <div class="form-text text-danger" *ngIf="EmailId.errors?.['required'] && (EmailId.touched || EmailId.dirty)" >Email Id is required</div>
+                        <div class="form-text text-danger" *ngIf="EmailId.errors?.['email'] && (EmailId.touched || EmailId.dirty)" >Invalid Email Id</div>
+
+
+                      </div>
+                    </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3Example4c">Password :</label>
+                        <input type="password" name="password" formControlName="password" class="form-control"  [(ngModel)]="user.password"/>
+                        <div class="form-text text-danger" *ngIf="Password.errors?.['required'] && (Password.touched || Password.dirty)" >Password is required</div>
+                        <div class="form-text text-danger" *ngIf="Password.errors?.['minlength'] && (Password.touched || Password.dirty)" >Password should contain minimum 8 characters</div>
+
+                      </div>
+                    </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" name="cpassword" for="form3Example4cd">Confirm password :</label>
+                        <input type="password" formControlName="cpassword" class="form-control"  [(ngModel)]="user.cpassword"/>
+                        <div class="form-text text-danger" *ngIf="Cpassword.errors?.['required'] && (Cpassword.touched || Cpassword.dirty)" >please confirm the password</div>
+                         <div class="form-text text-danger" *ngIf="Cpassword.errors.mustmatch" >Password doesn't match </div> -->
+
+                      <!-- </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <label class="form-label" for="form3Example4cd">Contact :</label>
+                          <input type="number" formControlName="contact" class="form-control" [(ngModel)]="user.contact"/>
+                          <div class="form-text text-danger" *ngIf="Contact.errors?.['required'] && (Contact.touched || Contact.dirty)" >Contact numer is required</div>
+                          <div class="form-text text-danger" *ngIf="Contact.errors?.['minlength'] && (Contact.touched || Contact.dirty)" >Contact number should be of 10 digits</div>
+                          <div class="form-text text-danger" *ngIf="Contact.errors?.['maxlength'] && (Contact.touched || Contact.dirty)" >Contact number should be of 10 digits</div>
+
+
+                        </div>
+                      </div>
+  
+                    <div class="d-flex justify-content-center mx-1 mb-1 mb-sm-1">
+                      <input type="submit" [disabled]="regForm.invalid" class="btn btn-primary btn-sm" value="Register">
+                      <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="login"
+                        class="fw-bold text-body"><u>Login here</u></a></p>
+  
+                    </div>
+                   
+                  </form>
+  
+                </div>
+                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+  
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                    class="img-fluid" alt="Sample image" >
+    
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>  
+
+
+
+
+
+
+
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,
+      initial-scale=1.0"/>
+    <link rel="stylesheet" href="reg.component.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="form-title">Registration</h1>
+      <form action="#">
+        <div class="main-user-info">
+          <div class="user-input-box">
+            <label for="fullName">Full Name</label>
+            <input type="text"
+                    id="fullName"
+                    name="fullName"
+                    placeholder="Enter Full Name"/>
+          </div>
+          <div class="user-input-box">
+            <label for="username">Username</label>
+            <input type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Enter Username"/>
+          </div>
+          <div class="user-input-box">
+            <label for="email">Email</label>
+            <input type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter Email"/>
+          </div>
+          <div class="user-input-box">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    placeholder="Enter Phone Number"/>
+          </div>
+          <div class="user-input-box">
+            <label for="password">Password</label>
+            <input type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter Password"/>
+          </div>
+          <div class="user-input-box">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    placeholder="Confirm Password"/>
+          </div>
+        </div>
+        <div class="gender-details-box">
+          <span class="gender-title">Gender</span>
+          <div class="gender-category">
+            <input type="radio" name="gender" id="male">
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="female">
+            <label for="female">Female</label>
+            <input type="radio" name="gender" id="other">
+            <label for="other">Other</label>
+          </div>
+        </div>
+        <div class="form-submit-btn">
+          <input type="submit" value="Register">
+        </div>
+      </form> -->
+<!--
+      <form [formGroup]="registrationForm" class="mx-1 mx-md-4" #regForm="ngForm" (ngSubmit)="addUser(regForm)">
+
+
+        <div class="d-flex flex-row align-items-center mb-4">
+          <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+          <div class="form-outline flex-fill mb-0">
+            <label class="form-label" for="form3Example4cd" style="color: white;">User Id:</label>
+            <input type="number" formControlName="userid" class="form-control" [(ngModel)]="user.userId"/>
+            <div class="form-text text-danger" *ngIf="UserId.errors?.['required'] && (UserId.touched || UserId.dirty)" >User Id is required</div>
+            <div class="form-text text-danger" *ngIf="UserId.errors?.['maxlength'] && (UserId.touched || UserId.dirty)" >User Id should be of maximum upto 4 digits</div>
+
+
+          </div>
+        </div>
+
+        <div class="d-flex flex-row align-items-center mb-4">
+          <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+          <div class="form-outline flex-fill mb-0">
+            <label class="form-label" for="form3Example1c" style="color: white;" >Name :</label>
+            <input type="text" formControlName="name" class="form-control"  [(ngModel)]="user.name"/>
+            <div class="form-text text-danger" *ngIf="UserName.errors?.['required'] && (UserName.touched || UserName.dirty)" >User Name is required</div>
+            <div class="form-text text-danger" *ngIf="UserName.errors?.['pattern'] && (UserName.touched || UserName.dirty)" >User Name should only contain alphabets</div>
+            <div class="form-text text-danger" *ngIf="UserName.errors?.['minlength'] && (UserName.touched || UserName.dirty)" >User Name is too short</div>
+            <div class="form-text text-danger" *ngIf="UserName.errors?.['maxlength'] && (UserName.touched || UserName.dirty)" >User Name is too long</div>
+
+          </div>
+        </div>
+
+
+        <div class="d-flex flex-row align-items-center mb-4">
+          <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+          <div class="form-outline flex-fill mb-0">
+            <label class="form-label" for="form3Example3c" style="color: white;" >Email :</label>
+            <input type="email" formControlName="email" class="form-control" [(ngModel)]="user.email" />
+            <div class="form-text text-danger" *ngIf="EmailId.errors?.['required'] && (EmailId.touched || EmailId.dirty)" >Email Id is required</div>
+            <div class="form-text text-danger" *ngIf="EmailId.errors?.['email'] && (EmailId.touched || EmailId.dirty)" >Invalid Email Id</div>
+
+
+          </div>
+        </div>
+
+        <div class="d-flex flex-row align-items-center mb-4">
+          <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+          <div class="form-outline flex-fill mb-0">
+            <label class="form-label" for="form3Example4c" style="color: white;" >Password :</label>
+            <input type="password" formControlName="password" class="form-control"  [(ngModel)]="user.password"/>
+            <div class="form-text text-danger" *ngIf="Password.errors?.['required'] && (Password.touched || Password.dirty)" >Password is required</div>
+            <div class="form-text text-danger" *ngIf="Password.errors?.['minlength'] && (Password.touched || Password.dirty)" >Password should contain minimum 8 characters</div>
+
+          </div>
+        </div>
+
+        <div class="d-flex flex-row align-items-center mb-4">
+          <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+          <div class="form-outline flex-fill mb-0">
+            <label class="form-label" for="form3Example4cd" style="color: white;" >Confirm password :</label>
+            <input type="password" formControlName="cpassword" class="form-control"  [(ngModel)]="user.cpassword"/>
+            <div class="form-text text-danger" *ngIf="Cpassword.errors?.['required'] && (Cpassword.touched || Cpassword.dirty)" >please confirm the password</div>
+
+          </div>
+        </div>
+
+        <div class="d-flex flex-row align-items-center mb-4">
+            <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+            <div class="form-outline flex-fill mb-0">
+              <label class="form-label" for="form3Example4cd" style="color: white;" >Contact :</label>
+              <input type="number" formControlName="contact" class="form-control" [(ngModel)]="user.contact"/>
+              <div class="form-text text-danger" *ngIf="Contact.errors?.['required'] && (Contact.touched || Contact.dirty)" >Contact numer is required</div>
+              <div class="form-text text-danger" *ngIf="Contact.errors?.['minlength'] && (Contact.touched || Contact.dirty)" >Contact number should be of 10 digits</div>
+              <div class="form-text text-danger" *ngIf="Contact.errors?.['maxlength'] && (Contact.touched || Contact.dirty)" >Contact number should be of 10 digits</div>
+
+
+            </div>
+          </div>
+
+        <div class="d-flex justify-content-center ">
+          <input type="submit" [disabled]="regForm.invalid" class="btn btn-primary btn-sm" value="Register">
+          <p class="text-center text-muted mt-5 mb-0" >Have already an account? <a href="login"
+            class="fw-bold text-body"><u>Login here</u></a></p>
+
+        </div>
+       
+      </form>
+    </div>-->
+
+
+
+
+
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <link rel="stylesheet" href="reg.component.css">
+<div class="tiledBackground">
+  <div class="logo">
+  <i class="fa fa-home" routerLink=""></i>
+  </div>
+
+
+<div class="wrapper">
+  <div class="title">
+    Register Here
+  </div>
+  <div class="social_media">
+    <div class="item">
+      <i class="fab fa-facebook-f"></i>
+    </div>
+    <div class="item">
+      <i class="fab fa-twitter"></i>
+    </div>
+    <div class="item">
+      <i class="fab fa-google-plus-g"></i>
+    </div>
+  </div>
+  
+
+
+  <div class="form">
+  <form [formGroup]="registrationForm" class="mx-1 mx-md-4" #regForm="ngForm" (ngSubmit)="addUser(regForm)">
+
+    <div class="alert-danger" *ngIf="!isSuccess">
+      {{errormsg}}
+  </div>
+    <div class="input_field">
+      <input type="number" formControlName="userid" placeholder="  User Id" class="input" [(ngModel)]="user.userId">
+                        <div class="form-text text-danger" *ngIf="UserId.errors?.['required'] && (UserId.touched || UserId.dirty)" >User Id is required</div>
+                        <div class="form-text text-danger" *ngIf="UserId.errors?.['pattern'] && (UserId.touched || UserId.dirty)" >User Id should start with (1-9) and of 4 digits </div>
+      <i class="fas fa-id-card"></i>
+    </div>
+    <div class="input_field">
+      <input type="text" formControlName="name" placeholder="  User Name" class="input" [(ngModel)]="user.name">
+      <div class="form-text text-danger" *ngIf="UserName.errors?.['required'] && (UserName.touched || UserName.dirty)" >User Name is required</div>
+      <div class="form-text text-danger" *ngIf="UserName.errors?.['pattern'] && (UserName.touched || UserName.dirty)" >User Name should only contain alphabets</div>
+      <div class="form-text text-danger" *ngIf="UserName.errors?.['minlength'] && (UserName.touched || UserName.dirty)" >User Name is too short</div>
+      <div class="form-text text-danger" *ngIf="UserName.errors?.['maxlength'] && (UserName.touched || UserName.dirty)" >User Name is too long</div>
+      <i class="fas fa-user"></i>
+    </div>
+    <div class="input_field">
+      <input type="number" formControlName="contact" placeholder="  Contact Number" class="input" [(ngModel)]="user.contact">
+                          <div class="form-text text-danger" *ngIf="Contact.errors?.['required'] && (Contact.touched || Contact.dirty)" >Contact numer is required</div>
+                          <div class="form-text text-danger" *ngIf="(Contact.errors?.['min']|| Contact.errors?.['max']) && (Contact.touched || Contact.dirty)" >Contact number should be valid and of 10 digits </div>
+      <i class="fas fa-phone"></i>
+    </div>
+    <div class="input_field">
+      <input type="email" formControlName="email" placeholder="  Email Id" class="input" [(ngModel)]="user.email">
+                        <div class="form-text text-danger" *ngIf="EmailId.errors?.['required'] && (EmailId.touched || EmailId.dirty)" >Email Id is required</div>
+                        <div class="form-text text-danger" *ngIf="EmailId.errors?.['email'] && (EmailId.touched || EmailId.dirty)" >Invalid Email Id</div>
+
+      <i class="fas fa-envelope"></i>
+    </div>
+
+    <div class="input_field">
+      <input type="password" formControlName="password" placeholder="  Password" class="input" [(ngModel)]="user.password">
+            <div class="form-text text-danger" *ngIf="Password.errors?.['required'] && (Password.touched || Password.dirty)" >Password is required</div>
+            <div class="form-text text-danger" *ngIf="Password.errors?.['minLength'] && (Password.touched || Password.dirty)" >Password should be atleast 8 characters</div>
+            <div class="form-text text-danger" *ngIf=" Password.errors?.['maxLength'] && (Password.touched || Password.dirty)">Password should be atmost 15 characters</div>
+            <div class="form-text text-danger" *ngIf="Password.errors?.['pattern'] && (Password.touched || Password.dirty)">Password must contain uppercase, small, number and symbol</div>
+
+      <i class="fas fa-lock"></i>
+    </div>
+    <div class="input_field">
+      <input type="password" formControlName="cpassword" placeholder="  Confirm Password" class="input" [(ngModel)]="user.cpassword">
+                        <div class="form-text text-danger" *ngIf="Cpassword.errors?.['required'] && (Cpassword.touched || Password.dirty)" >Passwords doesn't match</div>
+                        <div class="form-text text-danger" *ngIf="Cpassword.errors?.['notEqualToPassword'] && (Cpassword.touched || Password.dirty)" >Enter same passwords</div>
+      <i class="fas fa-key"></i>
+    </div>
+
+
+
+    
+    <div class="btnn">
+      <input type="submit" [disabled]="regForm.invalid" class="btn" value="Sign Up">
+    </div>
+  </form>
+    <!-- <input type="submit" [disabled]="regForm.invalid" class="btn btn-primary btn-lg"> -->
+    <div class="tc">
+    <p style="color: white;" >By continuning, I agree to the <span style="color: aqua;">Terms of Use</span> & <span style="color: aqua;">Privacy Policy</span></p>
+    </div>
+    <p class="lokesh text-white ">Already have an account? <a href="login"
+      class="fw-bold text-body"><u style="color: aqua;">Login here!</u></a></p>
+
+  </div>
+  
+
+</div> 
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    

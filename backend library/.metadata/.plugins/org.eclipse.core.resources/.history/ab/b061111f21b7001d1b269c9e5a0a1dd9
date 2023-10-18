@@ -1,0 +1,52 @@
+package com.project.wishlist.service;
+
+import java.util.List;
+
+import java.util.Optional;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.project.wishlist.model.Favourites;
+import com.project.wishlist.repository.WishListRepository;
+
+@Service
+public class WishlistService {
+	
+	private static Logger logger=LoggerFactory.getLogger(WishlistService.class);
+	@Autowired 
+	private WishListRepository wishlistRepo;
+	
+	public boolean addToFavourites(Favourites fav) {
+		Optional<Favourites> opt=wishlistRepo.findUserByEmailIdAndBookId(fav.getEmailId(),fav.getBookId());
+		boolean isAdded=false;
+		if(opt.isEmpty()) {
+			wishlistRepo.save(fav);
+			isAdded=true;
+		}
+		return isAdded;
+	}
+	
+	public List<Favourites> getFavourites(String emailId){
+		List<Favourites> fav=wishlistRepo.findFavouritesByEmailId(emailId);
+		if(fav.isEmpty())
+			return null;
+		return fav;
+	}
+	
+	public Favourites deleteFavouriteBook(String emailId,int bookId) {
+		Favourites isDeleted=null;
+		try {
+			isDeleted=wishlistRepo.deleteByEmailIdAndBookId(emailId,bookId);
+		}
+		catch(Exception e) {
+			logger.error("Error while deleting from favourites");
+		}
+		return isDeleted;
+		
+	}
+	
+
+}

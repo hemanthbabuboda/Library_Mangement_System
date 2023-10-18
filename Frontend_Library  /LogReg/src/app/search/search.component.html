@@ -1,0 +1,58 @@
+<br>
+<input class="searchBar" type="number" [(ngModel)]="bookId" name="search" placeholder="Update or Del By ID">
+<button (click)="searchBook()"><i class="fas fa-search" style="color: rgb(211, 42, 42);padding: 6px;"></i></button>
+
+<div *ngIf="show">
+    <div class="wrapper">
+      <span><button type="button" class="btn-close btn-close-white" aria-label="Close" (click)="refresh()"></button></span>
+        <div class="title">
+          update OR delete Book
+        </div>
+        <div class="form">
+          <form> 
+            <div class="input_category">
+              <label style="color: aliceblue;">Category :</label>
+              <select name="category" [(ngModel)]="book.category">
+                <option class="hi" selected>Select Category</option>
+                <option class="hli" value="Technical Language">Technical Language</option>
+                <option value="Comic">Comic</option>
+                <option value="Environment">Environment</option>
+                <option value="Ethics">Ethics</option>
+                <option value="Science">Science</option>
+                <option value="Others">Others</option> 
+               </select>
+            </div>
+        
+            <div class="input_field">
+              <input type="number"  name="bookId" placeholder="  Enter Book Id" class="input" [(ngModel)]="book.bookId">
+              <i class="fas fa-id-card"></i>
+            </div>
+            <div class="input_field">
+              <input type="text" name="bookName" placeholder="  Name of the Book" class="input" [(ngModel)]="book.bookName">
+              <i class="fas fa-book"></i>
+            </div>
+            <div class="input_field">
+              <input type="author" name="author" placeholder="  Author" class="input" [(ngModel)]="book.author">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="input_field">
+              <input type="number" name="quantity" placeholder="  Enter Quantity" class="input" [(ngModel)]="book.quantity">
+              <i class="fas fa-calculator"></i>
+            </div>
+            <div class="picture"> <div style="padding-bottom: 5px;"> <i class="fas fa-image" style="padding-right: 17px;"></i>Upload Image </div>
+            <span><img [src]="book.bookPic" width="100px"></span>
+            <input type="file" name="bookPic" style="border-radius: 7px;" (change)="onFileUpload($event)"/>
+                <span><img [src]="pic" width="100px"></span>
+            </div>
+      
+            <div class="btnn">
+              
+                <button (click)="updateBook()" style="margin-right: 10px;">Update Book</button>
+                <span><button (click)="deleteBook()" class="del">Delete Book</button></span>
+            </div>
+          </form>
+        </div>
+       </div>
+     
+
+</div>

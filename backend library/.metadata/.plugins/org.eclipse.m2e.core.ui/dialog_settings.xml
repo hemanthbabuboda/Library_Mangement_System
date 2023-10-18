@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="/Users/DA20422660/Documents/workspace-spring-tool-suite-4-4.15.1.RELEASE/backend library/LogReg"/>
+			<item value="/Users/DA20422660/Downloads/bookservice"/>
+			<item value="/Users/DA20422660/Downloads/wishlistservice"/>
+			<item value="/Users/DA20422660/Downloads/menuservice"/>
+			<item value="/Users/DA20422660/Downloads/Library-Management (1)/Library-Management/userservice"/>
+			<item value="/Users/DA20422660/Documents/workspace-spring-tool-suite-4-4.15.1.RELEASE/backend library/bookList"/>
+			<item value="/Users/DA20422660/Documents/sts-workspace/LogReg"/>
+			<item value="/Users/DA20422660/Documents/workspace-spring-tool-suite-4-4.15.1.RELEASE/backend library/BookList"/>
+			<item value="/Users/DA20422660/Downloads/eurekaserver"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+</section>

@@ -1,0 +1,156 @@
+<!-- 
+<app-au-nav></app-au-nav>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <link rel="stylesheet" href="add-book.component.css">
+
+<div class="tiledBackground"></div>
+
+<section class="vh-100" style="background-color: #eee;">
+    <div class="container h-80">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black" style="border-radius: 25px;">
+            <div class="card-body p-md-">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                  
+                  <p class="text-center h1 fw-bold mb-4 mx-1 mx-md-3 mt-3" style="padding-bottom: 2px;">Add new book</p>
+  
+                  <form class="mx-1 mx-md-4" >
+  
+                    <div class="d-flex flex-row align-items-center mb-2">
+                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3Example1c">BookId :</label>
+                        <input type="number"  class="form-control" name="bookId" [(ngModel)]="book.bookId"/>
+                      </div>
+                    </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-2">
+                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3Example3c">Book Name :</label>
+                        <input type="text"  class="form-control" name="bookName" [(ngModel)]="book.bookName" />
+                      </div>
+                    </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-2">
+                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3Example4c">Author :</label>
+                        <input type="text"  class="form-control" name="author" [(ngModel)]="book.author"/>
+                      </div>
+                    </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-2">
+                      <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3Example4cd">Category :</label>
+                        <select class="form-select" aria-label="Default select example" name="category" [(ngModel)]="book.category">
+                            <option selected>Select Category</option>
+                            <option value="1">Technical Language</option>
+                            <option value="2">Comic</option>
+                            <option value="3">Environment</option>
+                            <option value="4">Ethics</option>
+                            <option value="5">Science</option>
+                            <option value="6">Others</option>
+                          </select>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-2">
+                        <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <label class="form-label" for="form3Example4cd">Quantity :</label>
+                          <input type="number"  class="form-control" name="quantity"  [(ngModel)]="book.quantity"/>
+                        </div>
+                      </div>
+
+                      <div class="d-flex flex-row align-items-center mb-2">
+                        <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <label class="form-label" for="form3Example4cd">Book Pic :</label>
+                          <input type="file"  class="form-control" name="bookPic" (change)="onFileUpload($event)"  />
+                          <span><img [src]="pic" width="100px"></span>
+                        </div>
+                      </div>
+  
+                    <div class="d-flex justify-content-center mx-1 mb-1 mb-sm-1">
+                      
+                      <button class="btn btn-primary btn-sm" (click)="addBook()">Add Book</button>
+                    </div>
+    
+                  </form>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+ </div>
+  
+</section>
+
+
+
+ -->
+
+
+
+
+<!-- 
+ <app-au-nav></app-au-nav> -->
+
+ <div class="tiledBackground">
+  <div class="wrapper">
+  <div class="title">
+    Add New Book
+  </div>
+  <div class="form">
+    <form> 
+      <div class="input_category">
+        <label style="color: aliceblue;">Category :</label>
+        <select name="category" [(ngModel)]="book.category" >
+        <option class="hi" selected>Select Category</option>
+        <option class="hli" value="Technical Language">Technical Language</option>
+        <option value="Comic">Comic</option>
+        <option value="Environment">Environment</option>
+        <option value="Ethics">Ethics</option>
+        <option value="Science">Science</option>
+        <option value="Others">Others</option> 
+       </select>
+      </div>
+  
+      <div class="input_field">
+        <input type="number"  name="bookId" placeholder="  Enter Book Id" class="input" [(ngModel)]="book.bookId">
+        <i class="fas fa-id-card"></i>
+      </div>
+      <div class="input_field">
+        <input type="text" name="bookName" placeholder="  Name of the Book" class="input" [(ngModel)]="book.bookName">
+        <i class="fas fa-book"></i>
+      </div>
+      <div class="input_field">
+        <input type="author" name="author" placeholder="  Author" class="input" [(ngModel)]="book.author">
+        <i class="fas fa-user"></i>
+      </div>
+      <div class="input_field">
+        <input type="number" name="quantity" placeholder="  Enter Quantity" class="input" [(ngModel)]="book.quantity">
+        <i class="fas fa-calculator"></i>
+      </div>
+      <div class="picture"> <div style="padding-bottom: 5px;"> <i class="fas fa-image" style="padding-right: 17px;"></i>Upload Image </div>
+          <input type="file" name="bookPic" style="border-radius: 7px;" (change)="onFileUpload($event)"/>
+          <span><img [src]="pic" width="100px"></span>
+      </div>
+
+      <div class="btnn">
+        
+        <button class="btn" (click)="addBook()">Add Book</button>
+      </div>
+
+      <!-- <div class="btnn">
+        <input type="submit"  class="btn" (click)="addBook()" value="Add Book">
+      </div> -->
+    </form>
+  </div>
+ </div>
+ </div>

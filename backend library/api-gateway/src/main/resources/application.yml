@@ -1,0 +1,51 @@
+server:
+   port: 3333
+
+spring:
+   application:
+      name: api-gateway
+   main:
+        web-application-type: reactive
+        
+     
+      
+   cloud:
+      gateway:
+         discovery:
+            locator:
+               enabled: true
+         routes:
+            - id: user
+              uri: http://localhost:8081
+              predicates:
+              - Path=/users/**
+              
+            - id: book
+              uri: http://localhost:8083
+              predicates:
+              - Path=/books/**
+              
+            - id: fav
+              uri: http://localhost:8082
+              predicates:
+              - Path=/wishlist/**
+              
+            - id: issue
+              uri: http://localhost:9093
+              predicates:
+              - Path=/issuebook/**
+              
+            - id: return
+              uri: http://localhost:9094
+              predicates:
+              - Path=/returnbook/**
+         globalcors:
+           add-to-simple-url-handler-mapping: true
+           cors-configurations:
+            '[/**]':
+             allowedOrigins: "*"
+             allowedHeaders: "*"
+             allowedMethods: "*"
+         default-filters:
+         - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin   
+ 

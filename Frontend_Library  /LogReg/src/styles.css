@@ -1,0 +1,101 @@
+/* You can add global styles to this file, and also import other style files */
+/* 
+ * ----------------------------
+ * Common CSS
+ * ----------------------------
+ */
+ .tiledBackground {
+    background-image: url(./assets/book104.jpg);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position:center;
+    margin: -150px 0px 0px 0px;
+  }
+.title,hr{
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: aqua;
+  }
+  button{
+    display: inline-block;
+    background: transparent;
+    border: 1px solid white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    line-height: 1.3;
+    color: aqua;
+    font-weight: 400;
+}
+button:hover{
+    background-color: aqua;
+    color: black;
+    border: 1px solid transparent;
+    transition: .4s;
+}
+ *{
+    margin:0;
+    padding:0;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box
+}
+
+
+/* input{
+    border:none
+}  */
+
+
+span{
+    color:#f3eaea;
+    font-weight:700;
+    margin:0;
+    line-height:1.2
+}
+
+
+a:active,a:focus,a:hover{
+    text-decoration:none;
+    outline:0
+}
+
+
+/*Layout Css*/
+
+
+.main-content{
+    padding-top:116px;
+    min-height:100vh
+}
+
+/* 
+ * ----------------------------
+ * Book List
+ * ----------------------------
+ */
+
+ .book-box img {
+    width: 150px;
+}
+
+
+.book-box{
+    margin-bottom:60px
+}
+.quantity{
+    margin:15px 0 0;
+    font-weight:800;
+    color:#0da8e4
+}
+.book-box h1{
+    font-size:18px;
+    /* border-bottom:1px solid #ccc; */
+    padding-bottom:2px;
+    font-weight:600;
+    padding-top:2px;
+    margin-bottom:1px;
+    color: aqua
+}
+
